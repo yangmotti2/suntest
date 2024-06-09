@@ -24,8 +24,8 @@ public class SunController {
 	@RequestMapping(value= {"/", "list.do"})
 	public String list(Model model) throws IOException {
 		APIService serv = new APIService();
-		Double lat = serv.apiTest();
-		model.addAttribute("lat", lat);
+		List<SunVO> list = serv.apiSun();
+		model.addAttribute("list", list);
 		return Commons.SunCommon.VIEW_PATH + "sun_list.jsp";
 	}
 	
