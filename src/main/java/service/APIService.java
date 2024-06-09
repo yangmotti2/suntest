@@ -71,13 +71,8 @@ public class APIService {
 			
 			//해당 배열을 각 배열의 키값별로 구분해서 담는다. 
 			time_arr = (List<String>) json_daily.get("time");
-			System.out.println("t : " + time_arr);
-
 			uv_max_arr = (List<Double>) json_daily.get("uv_index_max");
-			System.out.println("u : " + uv_max_arr);
-			
 			uv_sky_max_arr = (List<Double>) json_daily.get("uv_index_clear_sky_max");
-			System.out.println("u2 : " + uv_sky_max_arr);
 			
 		} catch (Exception e) {
 			// TODO: handle exception
