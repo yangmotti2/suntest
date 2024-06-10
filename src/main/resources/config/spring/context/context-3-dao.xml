@@ -6,5 +6,9 @@
 	<bean id="sun_daoBean" class="dao.SunDAO">
 		<constructor-arg ref="sqlSessionBean"></constructor-arg>
 	</bean>
+	
+	<bean >
+	
+	</bean>
 		
 </beans>
