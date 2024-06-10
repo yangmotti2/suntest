@@ -2,6 +2,8 @@ package vo;
 
 import java.util.List;
 
+import com.fasterxml.jackson.databind.node.ArrayNode;
+
 public class HourlyVO {
     private List<String> time;
 

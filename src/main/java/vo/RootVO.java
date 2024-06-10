@@ -2,8 +2,12 @@ package vo;
 
 public class RootVO {
 	
-    private HourlyVO hourly;
+    public HourlyVO hourly;
 
+    public RootVO(HourlyVO hourly) {
+    	this.hourly = hourly;
+	}
+    
     // Getter와 Setter
     public HourlyVO getHourly() {
         return hourly;
