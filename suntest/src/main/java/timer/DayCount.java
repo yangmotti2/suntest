@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class DayCount extends Thread{
 	private String time = "";
-	
+	private String last_time = "";
 	public DayCount() {
 		while(true) {
 			this.time = timer();
@@ -18,11 +18,10 @@ public class DayCount extends Thread{
 		Date now = new Date();
 		
 		//시간을 포멧팅한다.
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"); 
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH"); 
 		String formattedNow = formatter.format(now);
 		
-		time = "<h2>"+ formattedNow +"</h2>";
-		System.out.println("시간 : "+time);
+		System.out.println("시간 : "+formattedNow);
 		return time;
 	}
 

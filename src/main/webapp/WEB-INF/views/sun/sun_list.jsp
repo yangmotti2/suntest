@@ -17,7 +17,18 @@
 		</c:forEach>
 	</table> --%>
 	
-	${ res } 개 insert 성공!
+	<!-- 현재 들어가 있는 DB 조회 -->
+	<table border="1">
+		<c:forEach var="vo" items="${list}">
+		<tr>
+			<td>${vo.idx}</td>	
+			<td>${vo.direct_radiation}</td>	
+			<td>${vo.time}</td>	
+		</tr>
+		</c:forEach>
+	</table>
+	
+<%-- 	${ res } 개 insert 성공! --%>
 	
 </body>
 </html>
