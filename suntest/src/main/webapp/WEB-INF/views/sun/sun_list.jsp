@@ -9,13 +9,15 @@
 </head>
 <body>
 
-	<table border="1" align="center">
+<%-- 	<table border="1" align="center">
 		<c:forEach var="time" items="${ list }" begin="">
 			<tr>
 				<td>${ time }</td>
 			</tr>
-		</c:forEach>
-	</table>
+		</c:forEach> 
+		
+	</table> --%>
+		${time}
 	
 </body>
 </html>
