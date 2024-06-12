@@ -28,6 +28,8 @@
 		</c:forEach>
 	</table>
 	
+	<a href="#" onclick="location.href='change.do'">이동</a>
+	
 <%-- 	${ res } 개 insert 성공! --%>
 	
 </body>

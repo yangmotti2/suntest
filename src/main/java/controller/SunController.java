@@ -55,6 +55,7 @@ public class SunController {
 		
 	}
 	
+	// 데이터 추가
 	@RequestMapping("insert.do")
 	public String insert(Model model ) throws IOException {
 		APIService serv = new APIService();
@@ -71,4 +72,8 @@ public class SunController {
 		return "redirect:list.do";
 	}
 	
+	@RequestMapping("/change.do")
+	public String change() {
+		return Commons.SunCommon.VIEW_PATH + "test.jsp";
+	}
 }
