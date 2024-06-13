@@ -20,7 +20,7 @@
 		        width: 150px;
 		        height: 150px;
 		        position: absolute;
-		        border-radius: 40px;
+		        border-radius: 30px;/*이거 조정*/
 		        background-color: blue;
 		        animation: rotate 3s linear infinite; /* rotate 애니메이션을 적용 애니메이션의 이름은 rotate이며, 3초 동안 일정한 속도로(linear) 회전하며(infinite) 무한히 반복 */
 		    }

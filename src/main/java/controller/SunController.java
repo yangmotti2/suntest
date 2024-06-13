@@ -22,7 +22,6 @@ import vo.SunVO;
 public class SunController {
 	
 	SunDAO sun_dao;
-	
 	RadiDAO radi_dao;
 	
 	public SunController(SunDAO sun_dao, RadiDAO radi_dao) {
@@ -36,14 +35,13 @@ public class SunController {
 		//현재 시각을 얻는다
 		Date now = new Date();
 				
-		//시간을 포멧팅한다. 저장되는 시간 양식
-//		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm"); 
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH"); 
+		//시간을 포멧팅한다.
+		SimpleDateFormat formatter = new SimpleDateFormat("YYYY-MM-dd"); 
 		String formattedNow = formatter.format(now);
 		
-		//해당 시간의 데이터가 DB에 있는지 확인한다.
+		//해당 날짜의 데이터가 DB에 있는지 확인한다.
 		List<RadiVO> list = radi_dao.radi_list_date(formattedNow);
-		
+
 		// 존재할 경우 전체 데이터 조회
 		if(list.size() > 0) { // 0보다 클 경우는 임시, 나중가면 24로 변경
 			List<RadiVO> total_list = radi_dao.selecList();
@@ -55,23 +53,20 @@ public class SunController {
 		
 	}
 	
-	// 데이터 추가
+	// API 호출 하여 데이터 DB에 추가하기
 	@RequestMapping("insert.do")
 	public String insert(Model model ) throws IOException {
 		APIService serv = new APIService();
 		HourlyVO h = serv.get_hourly_temp(37.5519, 126.9918);
 		List<String> time = h.getTime();
 		List<String> direct_radiation = h.getDirect_radiation();
-		
 		Map<String, List<String>> map;
-		
 		int res = sun_dao.insert(h);
-		System.out.println(res + "개 성공!!");
 		
-		//model.addAttribute("res", res);
 		return "redirect:list.do";
 	}
 	
+	//단순 이동 버튼
 	@RequestMapping("/change.do")
 	public String change() {
 		return Commons.SunCommon.VIEW_PATH + "test.jsp";

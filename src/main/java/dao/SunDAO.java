@@ -17,12 +17,13 @@ public class SunDAO {
 		this.sqlSession = sqlSession;
 	}
 	
-	//밑에서는 원하는 CRUD 가져다 붙이삼
+	// 전체 데이터 조회
 	public List<SunVO> selectList() {
 		List<SunVO> list = sqlSession.selectList("sun.sun_list");
 		return list;
 	}
 	
+	// 조회한 리스트들 추가
 	public int insert(HourlyVO vo) {
 		int res = 0;
 		Map<String, String> map = new HashMap<String, String>();
