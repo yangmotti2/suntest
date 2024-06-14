@@ -10,20 +10,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<!-- direct_radiation 전체 조회 -->
 	<select id="radi_list" resultType="vo.RadiVO" parameterType="String">
-		select * from direct_radiation order by time
+		SELECT * FROM direct_radiation
 	</select>
 
 	<!-- direct_radiation 해당 날짜 존재 여부 조회 -->
 	<select id="radi_list_date" resultType="vo.RadiVO" parameterType="String">
-		select * from direct_radiation where time Like #{date}||'%' order by time
-	</select>
+		SELECT * 
+	    FROM direct_radiation 
+	    WHERE TO_CHAR(time, 'YYYY-MM-DD"T"HH24:MI:SS') LIKE #{date} || '%' 
+	    ORDER BY time 
+
+	 </select>
 	
 	<!-- direct_radiation 추가 -->
 	<insert id="insert" parameterType="java.util.Map">
 		insert into direct_radiation values(
 			seq_radiation_idx.nextVal,
 			#{radi},
-			#{time}
+			TO_DATE(#{time}, 'YYYY-MM-DD"T"HH24:MI:SS')
 		)
 	</insert>
  	

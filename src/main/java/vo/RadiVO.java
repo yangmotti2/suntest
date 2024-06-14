@@ -1,6 +1,6 @@
 package vo;
 
-public class RadiVO {
+public class RadiVO { // 츨력 용 Direct_radiationVO
 	private int idx, direct_radiation;
 	private String time;
 	
