@@ -28,7 +28,9 @@
 		</c:forEach>
 	</table>
 	
-	<a href="#" onclick="location.href='change.do'">이동</a>
+	${no_date}
+		
+	<a href="#" onclick="location.href='change.do'">차오르는 모양</a>
 	
 <%-- 	${ res } 개 insert 성공! --%>
 	
