@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="uv">
+
+	<select id="uv_list" resultType="vo.UvVO">
+		select * from UV_INFO
+	</select>
+
+	<!-- UV_INFO 해당 날짜 존재 여부 조회
+	<select id="radi_list_date" resultType="vo.RadiVO" parameterType="String">
+		SELECT * 
+	    FROM direct_radiation 
+	    WHERE TO_CHAR(time, 'YYYY-MM-DD"T"HH24:MI:SS') LIKE #{date} || '%' 
+	    ORDER BY time 
+	 </select>
+	 -->
+	
+	<!-- UV_INFO 추가 -->
+	<insert id="list_insert" parameterType="vo.UvVO">
+		insert into UV_INFO values(
+			TO_TIMESTAMP(#{uv_time}, 'YYYY-MM-DD"T"HH24:MI:SS'),
+			#{uv},
+			#{altitude},
+			#{azimuth}
+		)
+	</insert>
+ 	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

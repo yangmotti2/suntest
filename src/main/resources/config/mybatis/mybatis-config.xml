@@ -15,5 +15,6 @@
 	<mappers>
 		<mapper resource="config/mybatis/mapper/sunlight.xml"/>
 		<mapper resource="config/mybatis/mapper/coordinate.xml"/>
+		<mapper resource="config/mybatis/mapper/uvinfo.xml"/>
 	</mappers>
 </configuration>

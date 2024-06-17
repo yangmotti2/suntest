@@ -31,6 +31,8 @@
 	${no_date}
 		
 	<a href="#" onclick="location.href='change.do'">차오르는 모양</a>
+
+	<a href="#" onclick="location.href='uv_change.do'">uv api</a>
 	
 <%-- 	${ res } 개 insert 성공! --%>
 	

@@ -27,6 +27,7 @@
 	<beans:bean class="controller.SunController">
 		<beans:constructor-arg ref="sun_daoBean"></beans:constructor-arg>
 		<beans:constructor-arg ref="radi_daoBean"></beans:constructor-arg>
+		<beans:constructor-arg ref="uv_daoBean"></beans:constructor-arg>
 	</beans:bean>
 	
 </beans:beans>

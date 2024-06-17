@@ -9,6 +9,9 @@
 	<bean id="radi_daoBean" class="dao.RadiDAO">
 		<constructor-arg ref="sqlSessionBean"></constructor-arg>
 	</bean>
+	<bean id="uv_daoBean" class="dao.UvDAO">
+		<constructor-arg ref="sqlSessionBean"></constructor-arg>
+	</bean>
 
 		
 </beans>
